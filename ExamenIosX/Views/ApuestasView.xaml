@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:ExamenIosX.ViewModels"
+    x:Class="ExamenIosX.Views.ApuestasView">
+    <ContentPage.BindingContext> 
+            <viewmodels:ApuestasViewModel/> 
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Prueba"/>
+            <ListView ItemsSource="{Binding Apuestas}" RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding user}"/>
+                                <Image Source="rmliverpool.jpg" WidthRequest="100" HeightRequest="50"/>
+                                <Label Text="{Binding resultadoLocal}"/>
+                                <Label Text="-"/>
+                                <Label Text="{Binding resultadoVisitante}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
